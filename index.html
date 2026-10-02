@@ -1128,7 +1128,6 @@ html,body{min-height:100%}
 </head>
 <body>
 <form name="pesanan" data-netlify="true" netlify-honeypot="bot-field" hidden><input name="bot-field"><input name="no-pesanan"><input name="nama"><input name="whatsapp"><input name="email"><input name="total"><textarea name="produk"></textarea><textarea name="catatan"></textarea><textarea name="data"></textarea></form>
-<form name="penilaian" data-netlify="true" netlify-honeypot="bot-field" hidden><input name="bot-field"><input name="nama"><input name="bintang"><textarea name="komentar"></textarea></form>
 <div id="site"></div>
 <div id="admin" class="admin hidden"></div>
 <script>window.BUYER_DATA = {"version":3,"seq":1003,"profile":{"name":"KizuyaStore","logo":"","wa":"6281234567890","email":"","instagram":"","banner":"","bio":"Toko produk digital: template, e-book, preset, dan jasa desain. Fast respon, file dikirim lewat WhatsApp.","address":"","maps":"","hours":"Admin online setiap hari, 09.00–21.00 WIB"},"content":{"announce":"Pesanan diproses setiap hari pukul 09.00–21.00 WIB.","announceUntil":"","announceEnd":"hide","announceEndText":"","heroTitle":"Produk digital, langsung dikirim ke WhatsApp-mu.","heroText":"Template, e-book, dan jasa desain siap pakai. Pilih produknya, pesan dari sini, lalu file atau link aksesnya dikirim lewat WhatsApp atau email.","heroCta":"Lihat produk","heroImage":"","menuTitle":"Produk","menuText":"Semua produk dikirim dalam bentuk file atau link. Tanpa ongkir, tanpa menunggu kurir.","aboutTitle":"Tentang KizuyaStore","aboutText":"KizuyaStore menjual produk digital yang praktis untuk belajar, bekerja, dan berkarya. Yang selalu kami jaga: setiap pembeli dilayani langsung oleh admin sampai produknya benar-benar terpakai.","aboutImage":"","faqTitle":"Tanya jawab","faq":[{"id":"f1","q":"Bagaimana produk dikirim?","a":"Setelah pembayaran dikonfirmasi, file atau link akses dikirim lewat WhatsApp atau email, biasanya 5–30 menit selama jam operasional."},{"id":"f2","q":"Bagaimana cara bayarnya?","a":"Transfer bank, e-wallet, atau QRIS. Rincian pembayaran dikirim lewat WhatsApp setelah pesanan masuk."},{"id":"f3","q":"Kalau file tidak bisa dibuka?","a":"Chat admin lewat WhatsApp. File akan dikirim ulang atau dibantu sampai bisa dipakai."}],"contactTitle":"Ada pertanyaan? Chat admin","contactText":"Boleh tanya dulu sebelum membeli. Admin membalas setiap hari pukul 09.00–21.00 WIB."},"look":{"style":"","theme":"batu","mode":"terang","primary":"","accent":"","colors":{"light":{},"dark":{}},"saved":[],"fontHead":"fredoka","fx":"none","pat":"polos","bs":"gradasi","font":"fredoka","textSize":"normal","radius":"tajam","heroLayout":"kanan","heroShape":"kotak","cols":"4","colsMobile":"2","cardStyle":"bayangan","anim":"halus","wm":true,"wmText":"","wmLevel":"tebal","showStock":true,"splash":true,"adminBtn":false,"show":{"profile":true,"hero":true,"announce":true,"about":true,"faq":true,"contact":true},"customFonts":[]},"shop":{"open":true,"closedText":"Pemesanan online sedang tutup. Silakan hubungi admin lewat WhatsApp.","trackStock":false},"categories":[{"id":"c1","name":"Template"},{"id":"c2","name":"E-book"},{"id":"c3","name":"Jasa desain"},{"id":"c4","name":"Preset & stiker"}],"products":[{"id":"pmuqybcw7xxk5","name":"gula aren","cat":"c1","price":89489,"was":0,"stock":99,"img":"📦","desc":"","detail":"","gallery":[],"show":true,"fav":false,"soon":false,"release":"","promoOn":false,"promoPrice":0,"promoUntil":"","promoLabel":""}],"orders":[],"promos":[{"id":"k1","h":"90772abe","pct":10,"until":"","min":0,"active":true}],"noSamples":true,"renamedKizuya":true,"ratings":[]};</script>
@@ -1370,12 +1369,12 @@ function normalize(d){
   if (!FONTS[d.look.font] && !cfOk(d.look.font)) d.look.font = 'jakarta';
   if (d.look.fontHead && !FONTS[d.look.fontHead] && !cfOk(d.look.fontHead)) d.look.fontHead = '';
   ['categories','products','orders','promos','ratings'].forEach(k => { if (!Array.isArray(d[k])) d[k] = def[k]; });
-  d.ratings.forEach(x => { safeId(x, 'r'); x.stars = Math.min(5, Math.max(1, Math.round(+x.stars) || 5)); });
   if (!Array.isArray(d.content.faq)) d.content.faq = [];
   delete d.content.testi; delete d.content.testiTitle; delete d.content.testiText; if (d.look && d.look.show) delete d.look.show.testi;
   const safeId = (x, pre) => { if (!/^[\w-]+$/.test(String(x.id || ''))) x.id = pre + uid(); };
   d.products.forEach(x => safeId(x, 'p')); d.categories.forEach(x => safeId(x, 'c'));
   d.orders.forEach(x => safeId(x, 'PS-')); d.content.faq.forEach(x => safeId(x, 'f'));
+  d.ratings.forEach(x => { safeId(x, 'r'); x.stars = Math.min(5, Math.max(1, Math.round(+x.stars) || 5)); });
   if (!d.noSamples) {                       // hapus produk & pesanan contoh lama (sekali saja)
     const SAMPLE = {"p1": "Template CV Modern", "p2": "Template Presentasi 30 Slide", "p3": "E-book Excel untuk Pemula", "p4": "E-book Mulai Jualan Online", "p5": "Jasa Desain Logo", "p6": "Desain Feed Instagram (5 post)", "p7": "Preset Lightroom 10 Gaya", "p8": "Paket Stiker WhatsApp"};
     d.products = d.products.filter(p => SAMPLE[p.id] !== p.name);
@@ -2118,7 +2117,6 @@ const TABS = {
   produk:{label:'Produk', icon:'box', render:pageProducts},
   kategori:{label:'Kategori', icon:'tag', render:pageCategories},
   promo:{label:'Kode promo', icon:'ticket', render:pagePromos},
-  penilaian:{label:'Penilaian', icon:'star', render:pageRatings},
   halaman:{label:'Isi halaman', icon:'page', render:pageContent},
   profil:{label:'Profil bisnis', icon:'store', render:pageProfile},
   tampilan:{label:'Tampilan', icon:'palette', render:pageLook},
@@ -2134,17 +2132,17 @@ function showAdmin(){
   closeDialog(); $('#site').classList.add('hidden'); $('#admin').classList.remove('hidden');
   admin.enter = true; renderAdmin(); setHash('admin'); window.scrollTo(0, 0);
 }
-const MAIN_TABS = ['ringkasan','produk','kategori','promo','penilaian','halaman','profil','tampilan','link','data'];
+const MAIN_TABS = ['ringkasan','produk','kategori','promo','halaman','profil','tampilan','link','data'];
 const tabList = () => MAIN_TABS;
 function renderAdmin(){
   applyTheme();
   if (!tabList().includes(admin.tab)) admin.tab = tabList()[0];
-  const nNew = root.orders.filter(o => o.status === 'Baru').length, nNewR = newRatings().length;
+  const nNew = root.orders.filter(o => o.status === 'Baru').length;
   $('#admin').innerHTML = `
     <div class="admin-top"><button class="btn btn-quiet btn-icon" onclick="toggleNav(true)" aria-label="Buka menu admin">${ic('menu')}</button><span>${esc(TABS[admin.tab].label)}</span></div>
     <aside class="sidebar" aria-label="Menu admin">
       <div class="brand">${brandMark()}<span style="min-width:0"><span class="brand-name" style="display:block">${esc(db.profile.name)}</span><small>Panel admin</small></span></div>
-      ${tabList().map(k => [k, TABS[k]]).map(([k, t]) => `<button class="nav-btn" ${admin.tab === k ? 'aria-current="page"' : ''} onclick="go('${k}')">${ic(t.icon)}<span>${t.label}</span>${k === 'pesanan' && nNew ? `<span class="badge-n">${nNew}</span>` : k === 'penilaian' && nNewR ? `<span class="badge-n">${nNewR}</span>` : k === 'link' && shareDirty() ? '<span class="badge-n" title="Ada perubahan yang belum diterbitkan">!</span>' : ''}</button>`).join('')}
+      ${tabList().map(k => [k, TABS[k]]).map(([k, t]) => `<button class="nav-btn" ${admin.tab === k ? 'aria-current="page"' : ''} onclick="go('${k}')">${ic(t.icon)}<span>${t.label}</span>${k === 'pesanan' && nNew ? `<span class="badge-n">${nNew}</span>` : k === 'link' && shareDirty() ? '<span class="badge-n" title="Ada perubahan yang belum diterbitkan">!</span>' : ''}</button>`).join('')}
       <button class="nav-btn" onclick="showSite()">${ic('store')}<span>Tampilan toko</span></button>
     </aside>
     <div class="scrim" onclick="toggleNav(false)"></div>
@@ -2786,7 +2784,7 @@ function renderRatings(){
     ${t.n ? `<div class="pv-box"><div class="rv-list">${shown.length ? shown.map(r => `<article class="rv-item">
       <span class="rv-av">${esc(initials(r.name || '?'))}</span>
       <div class="rv-head"><b>${esc(r.name || 'Pembeli')}</b>${stars(r.stars).replace('class="stars"', 'class="stars sm"')}
-        <span class="rv-meta">${r.date ? fmtDay(r.date) : ''}${r.product ? `${r.date ? ' · ' : ''}${esc(r.product)}` : ''}</span></div>
+        <span class="rv-meta">${r.date ? fmtDay(r.date) : ''}${r.product ? `${r.date ? ' · ' : ''}${esc(r.product)}` : ''}</span>${!IS_BUYER ? `<button type="button" class="btn btn-quiet btn-sm btn-icon del" onclick="deleteRating('${r.id}')" aria-label="Hapus penilaian" style="margin-left:auto">${ic('trash')}</button>` : ''}</div>
       ${r.text ? `<p class="rv-text">${esc(r.text)}</p>` : ''}</article>`).join('') : '<p class="rv-empty">Belum ada penilaian untuk filter ini.</p>'}</div></div>` : ''}
   </div>
   <div class="pv-bar"><div class="pv-bar-in"><button class="btn grow" onclick="openRate()">${ic('star')} Beri penilaian</button></div></div>`;
@@ -2805,94 +2803,19 @@ function openRate(){
     </form>`);
 }
 function pickRate(v){ rateVal = v; document.querySelectorAll('.rate-star').forEach(b => b.classList.toggle('on', +b.dataset.v <= v)); }
-async function sendRate(e){
+function sendRate(e){
   e.preventDefault();
   if (!rateVal) { toast('Pilih bintangnya dulu, ya.'); return; }
-  const f = new FormData(e.target), name = String(f.get('name') || '').trim(), text = String(f.get('text') || '').trim();
-  let ok = false;
-  try {
-    if (/^https?:$/.test(location.protocol)) {
-      const body = new URLSearchParams({'form-name':'penilaian', 'bot-field':'', nama:name, bintang:String(rateVal), komentar:text});
-      const r = await fetch('/', {method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body:body.toString()});
-      ok = r.ok;
-    }
-  } catch (err) { ok = false; }
-  if (ok) {
-    openDialog(`<div class="done"><div class="done-icon">${ic('check')}</div><h3>Terima kasih, ${esc(name)}!</h3><p class="muted">Penilaianmu sudah terkirim dan akan tampil di halaman ini setelah dicek admin.</p><button class="btn btn-block" onclick="closeDialog()">Selesai</button></div>`);
-  } else {
-    toast(/^https?:$/.test(location.protocol) ? 'Penilaian belum terkirim. Cek internetmu lalu coba lagi.' : 'Penilaian hanya bisa dikirim dari link toko online.');
-  }
+  const f = new FormData(e.target), name = String(f.get('name') || '').trim().slice(0, 40), text = String(f.get('text') || '').trim().slice(0, 400);
+  if (!name) { toast('Isi namamu dulu, ya.'); return; }
+  root.ratings.unshift({id:'r' + uid(), name, stars:rateVal, text, product:'', date:todayStr(), show:true});
+  save(); closeDialog(); rvFilter = 'all'; renderRatings();
+  const v = $('#pview'); if (v) v.scrollTop = 0;
+  toast('Terima kasih! Penilaianmu sudah tampil.');
 }
-
-/* ---------- Admin: kelola penilaian ---------- */
-let pullRvBusy = false, pullRvAt = 0;
-const newRatings = () => (root.ratings || []).filter(r => r.isNew);
-async function pullRatings(manual){
-  const n = db.share.netlify; if (!n.token || !n.siteId || pullRvBusy) return;
-  if (!manual && Date.now() - pullRvAt < 60000) return;
-  pullRvBusy = true; pullRvAt = Date.now();
-  const btn = $('#pullRvBtn'); if (btn) { btn.disabled = true; btn.lastChild.textContent = ' Mengambil…'; }
-  try {
-    const subs = await nfReq(`/sites/${n.siteId}/submissions?per_page=100`);
-    let added = 0;
-    (Array.isArray(subs) ? subs : []).forEach(sub => {
-      if (!sub || sub.form_name !== 'penilaian') return;
-      if (root.ratings.some(r => r.subId === sub.id)) return;
-      const d = sub.data || {}, stars = Math.min(5, Math.max(1, parseInt(d.bintang, 10) || 0));
-      if (!d.bintang || !stars) return;
-      root.ratings.unshift({id:'r' + uid(), subId:sub.id, online:true, isNew:true, name:String(d.nama || 'Pembeli').slice(0, 40), stars, text:String(d.komentar || '').slice(0, 400), product:'', date:String(sub.created_at || new Date().toISOString()).slice(0, 10), show:false});
-      added++;
-    });
-    if (added) { root.ratings.sort((a, b) => String(b.date || '').localeCompare(String(a.date || ''))); save(); }
-    if (admin.tab === 'penilaian' || admin.tab === 'ringkasan') renderAdmin();
-    else if (added) renderAdmin();
-    if (manual || added) toast(added ? `${added} penilaian baru dari pembeli.` : 'Belum ada penilaian baru.');
-  } catch (e) {
-    if (manual) toast(e.status === 401 ? 'Kode akses Netlify kedaluwarsa. Hubungkan ulang di menu Link pembeli.' : 'Gagal mengambil penilaian. Cek internetmu lalu coba lagi.');
-  } finally { pullRvBusy = false; const b2 = $('#pullRvBtn'); if (b2) { b2.disabled = false; b2.lastChild.textContent = ' Ambil penilaian online'; } }
-}
-function pageRatings(){
-  const R = db.ratings, vis = R.filter(r => r.show !== false), avg = vis.length ? vis.reduce((a, r) => a + r.stars, 0) / vis.length : 0, nNewR = R.filter(r => r.isNew).length;
-  const nfOn = !!(db.share.netlify.token && db.share.netlify.siteId);
-  if (nfOn) setTimeout(() => pullRatings(false), 50);
-  M(`${head('Penilaian', 'Penilaian dari pembeli masuk ke sini otomatis. Cek dulu, lalu tekan Tampilkan supaya muncul di halaman Penilaian toko.', `${nfOn ? `<button class="btn btn-ghost" id="pullRvBtn" onclick="pullRatings(true)">${ic('download')}<span> Ambil penilaian online</span></button>` : ''}<button class="btn btn-sm" onclick="editRating()">${ic('plus')} Tambah penilaian</button>`)}
-    ${nfOn ? `<details class="notice pull-help"><summary>${ic('shield')}<span>Penilaian online belum masuk? Nyalakan <b>form detection</b> di Netlify sekali saja.</span></summary>
-      <ol class="steps"><li>Buka <a href="https://app.netlify.com/sites/${esc(db.share.netlify.name)}/forms" target="_blank" rel="noopener">halaman Forms situsmu di Netlify</a>.</li><li>Tekan <b>Enable form detection</b>.</li><li>Kembali ke sini, buka menu Link pembeli, lalu tekan <b>Perbarui toko</b>.</li></ol></details>`
-    : `<div class="notice">${ic('shield')}<span>Supaya penilaian dari pembeli masuk ke sini otomatis, buat dulu link toko di menu <button class="linklike" onclick="go('link')">Link pembeli</button>.</span></div>`}
-    <div class="panel">
-      <div class="panel-head"><div><h2>Daftar penilaian</h2><p>${R.length} penilaian, ${vis.length} tampil${nNewR ? `, ${nNewR} baru menunggu dicek` : ''}${vis.length ? `, rata-rata ${avg.toLocaleString('id-ID', {maximumFractionDigits:1})} dari 5` : ''}.</p></div></div>
-      ${R.length ? R.map(r => `<div class="list-row"><div class="grow"><b>${esc(r.name || 'Pembeli')} <span class="stars sm">${'★'.repeat(r.stars)}</span>${r.isNew ? ' <span class="pill pill-online">Baru</span>' : r.online ? ' <span class="pill pill-online">Online</span>' : ''}${r.show === false ? ' <span class="pill">Disembunyikan</span>' : ''}</b><small>${esc(r.text || 'Tanpa komentar')}${r.date ? ' · ' + fmtDay(r.date) : ''}</small></div>
-        <div class="row-actions">
-          ${r.isNew ? `<button class="btn btn-sm" onclick="toggleRating('${r.id}')">Tampilkan</button>` : `<button class="btn btn-quiet btn-sm btn-icon" onclick="toggleRating('${r.id}')" aria-label="${r.show === false ? 'Tampilkan' : 'Sembunyikan'} penilaian">${ic(r.show === false ? 'eye' : 'eyeoff')}</button>`}
-          <button class="btn btn-quiet btn-sm btn-icon" onclick="editRating('${r.id}')" aria-label="Ubah penilaian">${ic('edit')}</button>
-          <button class="btn btn-quiet btn-sm btn-icon del" onclick="deleteRating('${r.id}')" aria-label="Hapus penilaian">${ic('trash')}</button>
-        </div></div>`).join('') : '<p class="muted">Belum ada penilaian. Penilaian dari pembeli akan muncul di sini, atau tekan “Tambah penilaian” untuk memasukkannya sendiri.</p>'}
-    </div>`);
-}
-function editRating(id){
-  const x = db.ratings.find(r => r.id === id) || {name:'', stars:5, text:'', product:'', date:todayStr(), show:true};
-  openDialog(`<div class="dialog-head"><h3>${id ? 'Ubah penilaian' : 'Tambah penilaian'}</h3>${closeBtn()}</div>
-    <form onsubmit="saveRating(event,'${id || ''}')">
-      <label class="field"><span>Nama pembeli</span><input type="text" name="name" maxlength="40" required value="${esc(x.name)}"></label>
-      <label class="field"><span>Bintang</span><select name="stars">${[5,4,3,2,1].map(k => `<option value="${k}" ${x.stars === k ? 'selected' : ''}>${'★'.repeat(k)} (${k})</option>`).join('')}</select></label>
-      <label class="field"><span>Komentar <small>(opsional)</small></span><textarea name="text" rows="3" maxlength="400">${esc(x.text)}</textarea></label>
-      <label class="field"><span>Produk yang dibeli <small>(opsional)</small></span><input type="text" name="product" maxlength="80" value="${esc(x.product || '')}"></label>
-      <label class="field"><span>Tanggal</span><input type="date" name="date" value="${esc(x.date || todayStr())}"></label>
-      <label class="check"><input type="checkbox" name="show" ${x.show !== false ? 'checked' : ''}> Tampilkan di toko</label>
-      <div class="dialog-actions"><button type="button" class="btn btn-ghost" onclick="closeDialog()">Batal</button><button class="btn">Simpan</button></div>
-    </form>`);
-}
-function saveRating(e, id){
-  e.preventDefault(); const f = new FormData(e.target), g = k => String(f.get(k) || '').trim();
-  const data = {name:g('name'), stars:Math.min(5, Math.max(1, +g('stars') || 5)), text:g('text'), product:g('product'), date:g('date') || todayStr(), show:f.has('show')};
-  if (!data.name) { toast('Isi nama pembelinya.'); return; }
-  if (id) Object.assign(db.ratings.find(r => r.id === id), data, {isNew:false}); else db.ratings.unshift({id:'r' + uid(), ...data});
-  save(); closeDialog(); renderAdmin(); toast('Penilaian disimpan.');
-}
-function toggleRating(id){ const r = db.ratings.find(x => x.id === id); if (!r) return; r.show = r.show === false; r.isNew = false; save(); renderAdmin(); }
 async function deleteRating(id){
   if (!await ask('Hapus penilaian ini?')) return;
-  db.ratings = db.ratings.filter(r => r.id !== id); save(); renderAdmin(); toast('Penilaian dihapus.');
+  db.ratings = db.ratings.filter(r => r.id !== id); save(); renderRatings(); toast('Penilaian dihapus.');
 }
 
 /* ---------- Profil bisnis ---------- */
@@ -3249,7 +3172,6 @@ async function buyerHTML(){
 </head>
 <body>
 <form name="pesanan" data-netlify="true" netlify-honeypot="bot-field" hidden><input name="bot-field"><input name="no-pesanan"><input name="nama"><input name="whatsapp"><input name="email"><input name="total"><textarea name="produk"></textarea><textarea name="catatan"></textarea><textarea name="data"></textarea></form>
-<form name="penilaian" data-netlify="true" netlify-honeypot="bot-field" hidden><input name="bot-field"><input name="nama"><input name="bintang"><textarea name="komentar"></textarea></form>
 <div id="site"></div>
 <div id="admin" class="admin hidden"></div>
 <script>window.BUYER_DATA = ${data};<\/script>
