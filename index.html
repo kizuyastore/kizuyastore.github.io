@@ -10,6 +10,11 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link id="app-font" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style id="app-css">
+*{-webkit-tap-highlight-color:transparent;-webkit-touch-callout:none}
+button,a,.btn,.chip,label{-webkit-user-select:none;user-select:none}
+button:focus:not(:focus-visible),a:focus:not(:focus-visible){outline:none}
+input,textarea,select{-webkit-user-select:text;user-select:text}
+
 /* ============================================================
    WARNA — diatur otomatis dari menu Admin > Tampilan
    ============================================================ */
@@ -1128,9 +1133,10 @@ html,body{min-height:100%}
 </head>
 <body>
 <form name="pesanan" data-netlify="true" netlify-honeypot="bot-field" hidden><input name="bot-field"><input name="no-pesanan"><input name="nama"><input name="whatsapp"><input name="email"><input name="total"><textarea name="produk"></textarea><textarea name="catatan"></textarea><textarea name="data"></textarea></form>
+<form name="lunas" data-netlify="true" hidden><input name="no-pesanan"><input name="total"></form>
 <div id="site"></div>
 <div id="admin" class="admin hidden"></div>
-<script>window.BUYER_DATA = {"version":3,"seq":1003,"profile":{"name":"KizuyaStore","logo":"","wa":"6281234567890","email":"","instagram":"","banner":"","bio":"Toko produk digital: template, e-book, preset, dan jasa desain. Fast respon, file dikirim lewat WhatsApp.","address":"","maps":"","hours":"Admin online setiap hari, 09.00–21.00 WIB"},"content":{"announce":"Pesanan diproses setiap hari pukul 09.00–21.00 WIB.","announceUntil":"","announceEnd":"hide","announceEndText":"","heroTitle":"Produk digital, langsung dikirim ke WhatsApp-mu.","heroText":"Template, e-book, dan jasa desain siap pakai. Pilih produknya, pesan dari sini, lalu file atau link aksesnya dikirim lewat WhatsApp atau email.","heroCta":"Lihat produk","heroImage":"","menuTitle":"Produk","menuText":"Semua produk dikirim dalam bentuk file atau link. Tanpa ongkir, tanpa menunggu kurir.","aboutTitle":"Tentang KizuyaStore","aboutText":"KizuyaStore menjual produk digital yang praktis untuk belajar, bekerja, dan berkarya. Yang selalu kami jaga: setiap pembeli dilayani langsung oleh admin sampai produknya benar-benar terpakai.","aboutImage":"","faqTitle":"Tanya jawab","faq":[{"id":"f1","q":"Bagaimana produk dikirim?","a":"Setelah pembayaran dikonfirmasi, file atau link akses dikirim lewat WhatsApp atau email, biasanya 5–30 menit selama jam operasional."},{"id":"f2","q":"Bagaimana cara bayarnya?","a":"Transfer bank, e-wallet, atau QRIS. Rincian pembayaran dikirim lewat WhatsApp setelah pesanan masuk."},{"id":"f3","q":"Kalau file tidak bisa dibuka?","a":"Chat admin lewat WhatsApp. File akan dikirim ulang atau dibantu sampai bisa dipakai."}],"contactTitle":"Ada pertanyaan? Chat admin","contactText":"Boleh tanya dulu sebelum membeli. Admin membalas setiap hari pukul 09.00–21.00 WIB."},"look":{"style":"","theme":"batu","mode":"terang","primary":"","accent":"","colors":{"light":{},"dark":{}},"saved":[],"fontHead":"fredoka","fx":"none","pat":"polos","bs":"gradasi","font":"fredoka","textSize":"normal","radius":"tajam","heroLayout":"kanan","heroShape":"kotak","cols":"4","colsMobile":"2","cardStyle":"bayangan","anim":"halus","wm":true,"wmText":"","wmLevel":"tebal","showStock":true,"splash":true,"adminBtn":false,"show":{"profile":true,"hero":true,"announce":true,"about":true,"faq":true,"contact":true},"customFonts":[]},"shop":{"open":true,"closedText":"Pemesanan online sedang tutup. Silakan hubungi admin lewat WhatsApp.","trackStock":false},"categories":[{"id":"c1","name":"Template"},{"id":"c2","name":"E-book"},{"id":"c3","name":"Jasa desain"},{"id":"c4","name":"Preset & stiker"}],"products":[{"id":"pmuqybcw7xxk5","name":"gula aren","cat":"c1","price":89489,"was":0,"stock":99,"img":"📦","desc":"","detail":"","gallery":[],"show":true,"fav":false,"soon":false,"release":"","promoOn":false,"promoPrice":0,"promoUntil":"","promoLabel":""}],"orders":[],"promos":[{"id":"k1","h":"90772abe","pct":10,"until":"","min":0,"active":true}],"noSamples":true,"renamedKizuya":true,"ratings":[]};</script>
+<script>window.BUYER_DATA = {"version":3,"seq":1003,"profile":{"name":"KizuyaStore","logo":"","wa":"6281234567890","email":"","instagram":"","banner":"","bio":"Toko produk digital: template, e-book, preset, dan jasa desain. Fast respon, file dikirim lewat WhatsApp.","address":"","maps":"","hours":"Admin online setiap hari, 09.00–21.00 WIB"},"content":{"announce":"Pesanan diproses setiap hari pukul 09.00–21.00 WIB.","announceUntil":"","announceEnd":"hide","announceEndText":"","heroTitle":"Produk digital, langsung dikirim ke WhatsApp-mu.","heroText":"Template, e-book, dan jasa desain siap pakai. Pilih produknya, pesan dari sini, lalu file atau link aksesnya dikirim lewat WhatsApp atau email.","heroCta":"Lihat produk","heroImage":"","menuTitle":"Produk","menuText":"Semua produk dikirim dalam bentuk file atau link. Tanpa ongkir, tanpa menunggu kurir.","aboutTitle":"Tentang KizuyaStore","aboutText":"KizuyaStore menjual produk digital yang praktis untuk belajar, bekerja, dan berkarya. Yang selalu kami jaga: setiap pembeli dilayani langsung oleh admin sampai produknya benar-benar terpakai.","aboutImage":"","faqTitle":"Tanya jawab","faq":[{"id":"f1","q":"Bagaimana produk dikirim?","a":"Setelah pembayaran dikonfirmasi, file atau link akses dikirim lewat WhatsApp atau email, biasanya 5–30 menit selama jam operasional."},{"id":"f2","q":"Bagaimana cara bayarnya?","a":"Transfer bank, e-wallet, atau QRIS. Rincian pembayaran dikirim lewat WhatsApp setelah pesanan masuk."},{"id":"f3","q":"Kalau file tidak bisa dibuka?","a":"Chat admin lewat WhatsApp. File akan dikirim ulang atau dibantu sampai bisa dipakai."}],"contactTitle":"Ada pertanyaan? Chat admin","contactText":"Boleh tanya dulu sebelum membeli. Admin membalas setiap hari pukul 09.00–21.00 WIB."},"look":{"style":"","theme":"batu","mode":"terang","primary":"","accent":"","colors":{"light":{},"dark":{}},"saved":[],"fontHead":"fredoka","fx":"none","pat":"polos","bs":"gradasi","font":"fredoka","textSize":"normal","radius":"tajam","heroLayout":"kanan","heroShape":"kotak","cols":"4","colsMobile":"2","cardStyle":"bayangan","anim":"halus","wm":true,"wmText":"","wmLevel":"tebal","showStock":true,"splash":true,"adminBtn":false,"show":{"profile":true,"hero":true,"announce":true,"about":true,"faq":true,"contact":true},"customFonts":[]},"shop":{"open":true,"closedText":"Pemesanan online sedang tutup. Silakan hubungi admin lewat WhatsApp.","trackStock":false},"categories":[{"id":"c1","name":"Template"},{"id":"c2","name":"E-book"},{"id":"c3","name":"Jasa desain"},{"id":"c4","name":"Preset & stiker"}],"products":[{"id":"pmuqybcw7xxk5","name":"gula aren","cat":"c1","price":89489,"was":0,"stock":99,"img":"📦","desc":"","detail":"","gallery":[],"show":true,"fav":false,"soon":false,"release":"","promoOn":false,"promoPrice":0,"promoUntil":"","promoLabel":""}],"orders":[],"promos":[{"id":"k1","h":"90772abe","pct":10,"until":"","min":0,"active":true}],"noSamples":true,"renamedKizuya":true,"pay":{"on":false}};</script>
 <script id="app">
 /* ============================================================
    IKON (garis sederhana)
@@ -1339,7 +1345,6 @@ const DEFAULT_DATA = () => ({
   categories: [ {id:'c1', name:'Template'}, {id:'c2', name:'E-book'}, {id:'c3', name:'Jasa desain'}, {id:'c4', name:'Preset & stiker'} ],
   products: [],
   orders: [],
-  ratings: [],
   promos: [ {id:'k1', code:'KIZUYA10', pct:10, active:true, until:'', min:0} ],
   share: { url: '', provider: 'netlify', netlify: { token: '', user: '', siteId: '', url: '', name: '', at: '', dirty: false, domain: '' }, vercel: { token: '', user: '', name: '', url: '', at: '', dirty: false }, github: { token: '', user: '', name: '', url: '', at: '', dirty: false }, gitlab: { token: '', user: '', name: '', url: '', at: '', dirty: false }, neocities: { token: '', user: '', name: '', url: '', at: '', dirty: false } },
   auth: { pass: 'admin123' }
@@ -1355,7 +1360,7 @@ const canStore = (() => { try { localStorage.setItem('__t', '1'); localStorage.r
 function normalize(d){
   const def = DEFAULT_DATA();
   ['profile','content','look','shop','share','auth'].forEach(k => d[k] = {...def[k], ...(d[k] || {})});
-  delete d.pay;   // fitur pembayaran sudah dihapus: buang sisa kunci lama
+  d.pay = {on:false, provider:'midtrans', sandbox:true, key:'', ...(d.pay && typeof d.pay === 'object' ? d.pay : {})};   // pembayaran otomatis
   ['netlify','vercel','github','gitlab','neocities'].forEach(k => d.share[k] = {...def.share[k], ...(d.share[k] && typeof d.share[k] === 'object' ? d.share[k] : {})});
   if (!['netlify','vercel','github','gitlab','neocities'].includes(d.share.provider)) d.share.provider = 'netlify';
   d.look.show = {...def.look.show, ...(d.look.show || {})};
@@ -1368,13 +1373,13 @@ function normalize(d){
   const cfOk = k => /^cf_/.test(k || '') && d.look.customFonts.some(f => 'cf_' + f.id === k);
   if (!FONTS[d.look.font] && !cfOk(d.look.font)) d.look.font = 'jakarta';
   if (d.look.fontHead && !FONTS[d.look.fontHead] && !cfOk(d.look.fontHead)) d.look.fontHead = '';
-  ['categories','products','orders','promos','ratings'].forEach(k => { if (!Array.isArray(d[k])) d[k] = def[k]; });
+  ['categories','products','orders','promos'].forEach(k => { if (!Array.isArray(d[k])) d[k] = def[k]; });
   if (!Array.isArray(d.content.faq)) d.content.faq = [];
   delete d.content.testi; delete d.content.testiTitle; delete d.content.testiText; if (d.look && d.look.show) delete d.look.show.testi;
   const safeId = (x, pre) => { if (!/^[\w-]+$/.test(String(x.id || ''))) x.id = pre + uid(); };
   d.products.forEach(x => safeId(x, 'p')); d.categories.forEach(x => safeId(x, 'c'));
   d.orders.forEach(x => safeId(x, 'PS-')); d.content.faq.forEach(x => safeId(x, 'f'));
-  d.ratings.forEach(x => { safeId(x, 'r'); x.stars = Math.min(5, Math.max(1, Math.round(+x.stars) || 5)); });
+  delete d.ratings;
   if (!d.noSamples) {                       // hapus produk & pesanan contoh lama (sekali saja)
     const SAMPLE = {"p1": "Template CV Modern", "p2": "Template Presentasi 30 Slide", "p3": "E-book Excel untuk Pemula", "p4": "E-book Mulai Jualan Online", "p5": "Jasa Desain Logo", "p6": "Desain Feed Instagram (5 post)", "p7": "Preset Lightroom 10 Gaya", "p8": "Paket Stiker WhatsApp"};
     d.products = d.products.filter(p => SAMPLE[p.id] !== p.name);
@@ -1613,7 +1618,6 @@ function renderSite(){
         <a href="#menu">${esc(C.menuTitle || 'Menu')}</a>
         ${L.show.about ? `<a href="#tentang">${esc(C.aboutTitle || 'Tentang kami')}</a>` : ''}
         ${hasFaq ? `<a href="#faq">${esc(C.faqTitle || 'Tanya jawab')}</a>` : ''}
-        ${db.ratings.some(r => r.show !== false) ? '<a href="#penilaian">Penilaian</a>' : ''}
         ${L.show.contact ? '<a href="#kontak">Kontak</a>' : ''}
       </nav>
       ${!IS_BUYER ? `<button class="btn btn-ghost btn-sm admin-btn" onclick="showAdmin()">${ic('sliders')}<span>Admin</span></button>` : ''}
@@ -1630,7 +1634,6 @@ function renderSite(){
         ${C.heroText ? `<p class="lead">${esc(C.heroText)}</p>` : ''}
         <div class="hero-actions">
           <a class="btn" href="#menu">${esc(C.heroCta || 'Lihat menu')}</a>
-          <a class="btn btn-ghost" href="#penilaian">${ic('star')} Penilaian${rateAvgText()}</a>
           ${P.wa && !L.show.profile ? `<a class="btn btn-ghost" href="${waLink(P.wa, `Halo ${P.name}, saya mau tanya.`)}" target="_blank" rel="noopener">${ic('chat')} Chat WhatsApp</a>` : ''}
         </div>
         ${L.show.profile ? '' : `<div class="hero-facts">
@@ -1832,7 +1835,7 @@ function renderCheckout(lines, sub){
         ${disc ? `<div><span>Subtotal (${countLines(lines)} item)</span><span>${rp(sub)}</span></div><div class="disc"><span>Promo ${esc(state.promoCode)} (-${pr.pct}%)</span><span>-${rp(disc)}</span></div>` : ''}
         <div class="total"><span>Total${disc ? '' : ` (${countLines(lines)} item)`}</span><span>${rp(sub - disc)}</span></div>
       </div>
-      <button class="btn btn-block" type="submit" form="coForm">Pesan sekarang</button>
+      <button class="btn btn-block" type="submit" form="coForm">${db.pay && db.pay.on ? 'Bayar sekarang' : 'Pesan sekarang'}</button>
     </div>`, {sheet:true});
 }
 function coInput(e){ const t = e.target; if (t.name && t.name in state.form) state.form[t.name] = t.value; }
@@ -1869,8 +1872,33 @@ async function sendOrderOnline(o){          // pesanan dari link toko dikirim ke
   } catch (e) { ok = false; }
   if (ok) { cart = {}; saveCart(); state.form.note = ''; renderGrid(); updateCart(); state.sent = true; }
   else state.sendFail = true;
+  if (ok && db.pay && db.pay.on && await startPay(o)) return;   // ke halaman pembayaran
   renderDone();
 }
+/* ---------- Pembayaran otomatis (Midtrans / Xendit lewat fungsi Netlify) ---------- */
+const PAY_URL = '/.netlify/functions/pay';
+async function startPay(o){
+  const items = o.items.map(i => ({pid:i.pid, qty:i.qty})), promo = o.promo ? o.promo.code : '';
+  try {
+    const r = await fetch(PAY_URL, {method:'POST', body:JSON.stringify({action:'create', id:o.id, name:o.name, phone:o.phone, email:o.email, items, promo})});
+    const j = await r.json(); if (!r.ok || !j.url) throw 0;
+    try { localStorage.setItem('kizuya_pay', JSON.stringify({id:o.id, items, promo, url:j.url})); } catch (e) {}
+    location.href = j.url; return true;
+  } catch (e) { return false; }
+}
+async function checkPaid(n = 0){
+  let p = null; try { p = JSON.parse(localStorage.getItem('kizuya_pay') || 'null'); } catch (e) {}
+  if (!p) return;
+  openDialog(`<div class="done"><div class="done-icon">${ic('clock')}</div><h3>Memeriksa pembayaran…</h3><p class="muted">${esc(p.id)}</p></div>`);
+  let j = {}; try { const r = await fetch(PAY_URL, {method:'POST', body:JSON.stringify({...p, action:'status'})}); j = await r.json(); } catch (e) {}
+  if (!j.paid && n < 5) return setTimeout(() => checkPaid(n + 1), 3000);
+  if (j.paid) { try { localStorage.removeItem('kizuya_pay'); } catch (e) {} }
+  const links = (j.links || []).map(l => `<a class="btn btn-block" href="${esc(l.url)}" target="_blank" rel="noopener">${ic('external')} ${esc(l.name)}</a>`).join('');
+  openDialog(j.paid
+    ? `<div class="done"><div class="done-icon">${ic('check')}</div><h3>Pembayaran berhasil</h3><p class="muted">Pesanan ${esc(p.id)} sudah lunas. ${links ? 'Produkmu bisa dibuka lewat tombol di bawah. Simpan link ini, ya.' : 'Admin akan mengirim produknya segera.'}</p>${links}<button class="btn btn-quiet btn-block" onclick="closeDialog()">Selesai</button></div>`
+    : `<div class="done"><div class="done-icon">${ic('clock')}</div><h3>Pembayaran belum terkonfirmasi</h3><p class="muted">Kalau kamu sudah membayar, tunggu sebentar lalu cek lagi.</p><button class="btn btn-block" onclick="checkPaid()">Cek lagi</button>${p.url ? `<a class="btn btn-ghost btn-block" href="${esc(p.url)}">Buka halaman pembayaran</a>` : ''}<button class="btn btn-quiet btn-block" onclick="closeDialog()">Tutup</button></div>`);
+}
+if (IS_BUYER && /[?&]bayar=/.test(location.search)) setTimeout(checkPaid, 600);
 function renderDone(){
   const o = state.lastOrder; if (!o) return;
   if (IS_BUYER && state.sendFail) {          // cadangan: kalau pesanan gagal terkirim, pakai WhatsApp
@@ -1978,7 +2006,6 @@ async function shareReceipt(){
 /* ---------- Halaman detail produk ---------- */
 const pvImgs = p => [p.img, ...(p.gallery || [])].filter(isImg);
 function route(){
-  if (location.hash === '#penilaian') return openRatings();
   const m = location.hash.match(/^#produk-([\w-]+)$/), p = m && getProduct(m[1]);
   if (p && p.show) openProduct(p.id); else closeProductView();
 }
@@ -2298,6 +2325,7 @@ function editProduct(id){
           ${p.promoOn && p.promoUntil ? `<p class="hint span-2">${Date.now() < Date.parse(p.promoUntil) ? `Promo berjalan, berakhir ${esc(fmtDate(p.promoUntil))}.` : `Promo sudah selesai sejak ${esc(fmtDate(p.promoUntil))}. Ganti waktu berakhirnya untuk memulai lagi.`}</p>` : ''}
         </div>
       </div>
+      <label class="field span-2"><span>Link produk <small>(dikirim otomatis setelah lunas)</small></span><input type="url" name="accessUrl" value="${esc(p.accessUrl || '')}" placeholder="https://drive.google.com/…"><small>Hanya muncul untuk pembeli yang sudah bayar. Tidak ikut ke halaman toko.</small></label>
       <label class="field span-2"><span>Deskripsi singkat</span><textarea name="desc" rows="3" placeholder="Bahan, rasa, atau ukuran">${esc(p.desc)}</textarea></label>
       <div class="span-2">${imgField('img', p.img, {label:'Foto utama', emoji:true, hint:'Foto otomatis dikecilkan supaya hemat tempat. Tanpa foto, emoji yang dipakai.'})}</div>
       <div class="field span-2"><span>Foto tambahan <small>(opsional, tampil di galeri halaman detail)</small></span>
@@ -2329,7 +2357,7 @@ function saveProduct(e, id){
   let cat = g('cat');
   if (cat === '__new') { const nm = g('newcat'); if (!nm) { toast('Isi nama kategori barunya dulu.'); return; } cat = ensureCategory(nm); }
   const data = { name:g('name'), cat, price:Math.max(0, +g('price') || 0), was:Math.max(0, +g('was') || 0), stock:Math.max(0, parseInt(g('stock'), 10) || 0),
-    img:g('img') || '📦', desc:g('desc'), detail:g('detail'), gallery:galEdit.slice(), show:f.has('show'), fav:f.has('fav'), soon:f.has('soon'), release:f.has('soon') ? g('release') : '',
+    img:g('img') || '📦', desc:g('desc'), accessUrl:g('accessUrl'), detail:g('detail'), gallery:galEdit.slice(), show:f.has('show'), fav:f.has('fav'), soon:f.has('soon'), release:f.has('soon') ? g('release') : '',
     promoOn, promoPrice:promoOn ? promoPrice : (getProduct(id) || {}).promoPrice || 0, promoUntil:promoOn ? pud.toISOString() : '', promoLabel:g('promoLabel') };
   if (id) Object.assign(getProduct(id), data); else { db.products.unshift({id:'p' + uid(), ...data}); admin.q = ''; }
   save(); closeDialog(); renderAdmin(); toast(id ? 'Perubahan disimpan.' : `${data.name} ditambahkan.`);
@@ -2419,7 +2447,8 @@ async function pullOrders(manual){
   const btn = $('#pullBtn'); if (btn) { btn.disabled = true; btn.lastChild.textContent = ' Mengambil…'; }
   try {
     const subs = await nfReq(`/sites/${n.siteId}/submissions?per_page=100`);
-    let added = 0;
+    let added = 0; const paidIds = new Set();
+    (Array.isArray(subs) ? subs : []).forEach(sub => { if (sub && sub.form_name === 'lunas' && (sub.data || {})['no-pesanan']) paidIds.add(String(sub.data['no-pesanan'])); });
     (Array.isArray(subs) ? subs : []).forEach(sub => {
       if (!sub || (sub.form_name && sub.form_name !== 'pesanan')) return;
       if (root.orders.some(o => o.subId === sub.id)) return;
@@ -2434,6 +2463,7 @@ async function pullOrders(manual){
       if (tracked()) items.forEach(i => { const p = getProduct(i.pid); if (p) p.stock = Math.max(0, p.stock - i.qty); });
       added++;
     });
+    root.orders.forEach(o => { if (paidIds.has(o.id) && !o.paid) { o.paid = true; o.status = 'Selesai'; added++; } });
     if (added) { root.orders.sort((a, b) => Date.parse(b.date) - Date.parse(a.date)); save(); }
     if (admin.tab === 'pesanan' || admin.tab === 'ringkasan') renderAdmin();
     if (manual || added) toast(added ? `${added} pesanan baru dari toko online.` : 'Belum ada pesanan baru.');
@@ -2746,78 +2776,6 @@ async function deleteFaq(id){
 }
 
 
-/* ---------- Penilaian ---------- */
-const stars = n => `<span class="stars" role="img" aria-label="${n} dari 5 bintang">${[1,2,3,4,5].map(i => `<i class="${i <= n ? 'on' : ''}">★</i>`).join('')}</span>`;
-const visRatings = () => (db.ratings || []).filter(r => r.show !== false);
-function rateStats(){
-  const list = visRatings(), n = list.length, sum = list.reduce((a, r) => a + r.stars, 0);
-  const by = [5,4,3,2,1].map(k => list.filter(r => r.stars === k).length);
-  return {list, n, avg: n ? sum / n : 0, by};
-}
-const rateAvgText = () => { const t = rateStats(); return t.n ? ` <small>${t.avg.toLocaleString('id-ID', {maximumFractionDigits:1})}</small>` : ''; };
-let rvFilter = 'all';
-function openRatings(){
-  let v = $('#pview');
-  if (!v) { v = document.createElement('div'); v.id = 'pview'; v.className = 'pview'; v.setAttribute('role', 'dialog'); v.setAttribute('aria-modal', 'true'); document.body.appendChild(v); document.body.classList.add('pv-open'); }
-  v.dataset.pid = ''; v.setAttribute('aria-label', 'Penilaian');
-  document.title = `Penilaian | ${db.profile.name}`;
-  rvFilter = 'all'; renderRatings(); v.scrollTop = 0;
-}
-function renderRatings(){
-  const v = $('#pview'); if (!v) return;
-  const t = rateStats(), list = t.list.slice().sort((a, b) => String(b.date || '').localeCompare(String(a.date || '')));
-  const shown = list.filter(r => rvFilter === 'all' ? true : rvFilter === 'text' ? !!r.text : r.stars === +rvFilter);
-  const chips = [['all', `Semua (${t.n})`], ...[5,4,3,2,1].map((k, i) => [String(k), `${k} ★ (${t.by[i]})`]), ['text', 'Dengan komentar']];
-  v.innerHTML = `
-  <header class="pv-top"><button class="btn btn-quiet btn-icon" onclick="pvBack()" aria-label="Kembali">${ic('back')}</button>
-    <span class="brand">${brandMark()}<span class="brand-name">${esc(db.profile.name)}</span></span>
-    ${shopOpen() ? `<button class="btn btn-ghost btn-icon cart-btn" onclick="openCart()" aria-label="Buka keranjang">${ic('bag')}<span class="cart-count hidden" id="pvCount"></span></button>` : ''}</header>
-  <div class="pv-wrap" style="max-width:760px">
-    <div class="pv-box">
-      <h2>Penilaian pembeli</h2>
-      ${t.n ? `<div class="rv-sum">
-        <div class="rv-score"><b>${t.avg.toLocaleString('id-ID', {maximumFractionDigits:1})}<small>/5</small></b>${stars(Math.round(t.avg))}<span>${t.n} penilaian</span></div>
-        <div class="rv-bars">${[5,4,3,2,1].map((k, i) => `<div class="rv-bar"><span>${k} ★</span><i><u style="width:${Math.round(t.by[i] / t.n * 100)}%"></u></i><span>${t.by[i]}</span></div>`).join('')}</div>
-      </div>
-      <div class="chips rv-filter" role="group" aria-label="Saring penilaian">${chips.map(([k, l]) => `<button type="button" class="chip" aria-pressed="${rvFilter === k}" onclick="rvFilter='${k}';renderRatings()">${l}</button>`).join('')}</div>` : '<p class="muted">Belum ada penilaian. Jadilah yang pertama menilai!</p>'}
-    </div>
-    ${t.n ? `<div class="pv-box"><div class="rv-list">${shown.length ? shown.map(r => `<article class="rv-item">
-      <span class="rv-av">${esc(initials(r.name || '?'))}</span>
-      <div class="rv-head"><b>${esc(r.name || 'Pembeli')}</b>${stars(r.stars).replace('class="stars"', 'class="stars sm"')}
-        <span class="rv-meta">${r.date ? fmtDay(r.date) : ''}${r.product ? `${r.date ? ' · ' : ''}${esc(r.product)}` : ''}</span>${!IS_BUYER ? `<button type="button" class="btn btn-quiet btn-sm btn-icon del" onclick="deleteRating('${r.id}')" aria-label="Hapus penilaian" style="margin-left:auto">${ic('trash')}</button>` : ''}</div>
-      ${r.text ? `<p class="rv-text">${esc(r.text)}</p>` : ''}</article>`).join('') : '<p class="rv-empty">Belum ada penilaian untuk filter ini.</p>'}</div></div>` : ''}
-  </div>
-  <div class="pv-bar"><div class="pv-bar-in"><button class="btn grow" onclick="openRate()">${ic('star')} Beri penilaian</button></div></div>`;
-  const c = $('#pvCount'); if (c) { const n = countLines(cartLines()); c.textContent = n; c.classList.toggle('hidden', !n); }
-}
-let rateVal = 0;
-function openRate(){
-  rateVal = 0;
-  openDialog(`<div class="dialog-head"><h3>Beri penilaian</h3>${closeBtn()}</div>
-    <form onsubmit="sendRate(event)">
-      <div class="field"><span>Nilaimu untuk ${esc(db.profile.name)}</span>
-        <div class="rate-pick" role="group" aria-label="Pilih bintang">${[1,2,3,4,5].map(i => `<button type="button" class="rate-star" data-v="${i}" aria-label="${i} bintang" onclick="pickRate(${i})">★</button>`).join('')}</div></div>
-      <label class="field"><span>Nama</span><input type="text" name="name" maxlength="40" required autocomplete="name"></label>
-      <label class="field"><span>Komentar <small>(opsional)</small></span><textarea name="text" rows="3" maxlength="400" placeholder="Ceritakan pengalaman belanjamu"></textarea></label>
-      <button class="btn btn-block">Kirim penilaian</button>
-    </form>`);
-}
-function pickRate(v){ rateVal = v; document.querySelectorAll('.rate-star').forEach(b => b.classList.toggle('on', +b.dataset.v <= v)); }
-function sendRate(e){
-  e.preventDefault();
-  if (!rateVal) { toast('Pilih bintangnya dulu, ya.'); return; }
-  const f = new FormData(e.target), name = String(f.get('name') || '').trim().slice(0, 40), text = String(f.get('text') || '').trim().slice(0, 400);
-  if (!name) { toast('Isi namamu dulu, ya.'); return; }
-  root.ratings.unshift({id:'r' + uid(), name, stars:rateVal, text, product:'', date:todayStr(), show:true});
-  save(); closeDialog(); rvFilter = 'all'; renderRatings();
-  const v = $('#pview'); if (v) v.scrollTop = 0;
-  toast('Terima kasih! Penilaianmu sudah tampil.');
-}
-async function deleteRating(id){
-  if (!await ask('Hapus penilaian ini?')) return;
-  db.ratings = db.ratings.filter(r => r.id !== id); save(); renderRatings(); toast('Penilaian dihapus.');
-}
-
 /* ---------- Profil bisnis ---------- */
 function pageProfile(){
   const P = db.profile;
@@ -3088,7 +3046,7 @@ function pageData(){
 }
 function backup(){
   const slug = (db.profile.name || 'toko').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
-  const data = JSON.parse(JSON.stringify(root)); if (data.share && data.share.netlify) data.share.netlify.token = '';
+  const data = JSON.parse(JSON.stringify(root)); if (data.share && data.share.netlify) data.share.netlify.token = ''; if (data.pay) data.pay.key = '';
   if (data.share) ['vercel','github','gitlab','neocities'].forEach(k => { if (data.share[k]) data.share[k].token = ''; });
   download(`cadangan-${slug}-${new Date().toISOString().slice(0, 10)}.json`, JSON.stringify(data, null, 2), 'application/json');
   toast('Cadangan diunduh.');
@@ -3125,8 +3083,9 @@ async function resetAll(){
 /* ---------- Link pembeli ---------- */
 function buyerData(){             // salinan data untuk pembeli: tanpa pesanan & tanpa produk tersembunyi
   const d = JSON.parse(JSON.stringify(db)); delete d.stores;
-  d.orders = []; d.products = d.products.filter(p => p.show); d.ratings = (d.ratings || []).filter(r => r.show !== false);
+  d.orders = []; d.products = d.products.filter(p => p.show);
   d.look.adminBtn = false; d.look.saved = []; delete d.auth; delete d.share;
+  d.pay = {on:!!(db.pay && db.pay.on && db.pay.key)}; d.products.forEach(p => { delete p.accessUrl; });
   d.promos = (d.promos || []).filter(p => p.active).map(p => ({id:p.id, h:promoHash(p.code), pct:p.pct, until:p.until, min:p.min, active:true}));
   return d;
 }
@@ -3172,12 +3131,96 @@ async function buyerHTML(){
 </head>
 <body>
 <form name="pesanan" data-netlify="true" netlify-honeypot="bot-field" hidden><input name="bot-field"><input name="no-pesanan"><input name="nama"><input name="whatsapp"><input name="email"><input name="total"><textarea name="produk"></textarea><textarea name="catatan"></textarea><textarea name="data"></textarea></form>
+<form name="lunas" data-netlify="true" hidden><input name="no-pesanan"><input name="total"></form>
 <div id="site"></div>
 <div id="admin" class="admin hidden"></div>
 <script>window.BUYER_DATA = ${data};<\/script>
 <script id="app">${js}<\/script>
 </body>
 </html>`;
+}
+
+/* ---------- Fungsi server pembayaran (diunggah ke Netlify saat toko diterbitkan) ---------- */
+async function payHandler(event){      // berjalan di server Netlify, bukan di browser
+  const J = (c, o) => ({statusCode:c, headers:{'Content-Type':'application/json'}, body:JSON.stringify(o)});
+  const mt = CFG.provider === 'midtrans', auth = 'Basic ' + Buffer.from(CFG.key + ':').toString('base64'), q = event.queryStringParameters || {};
+  const price = p => (p.pp && p.pu && Date.now() < Date.parse(p.pu)) ? p.pp : p.price;
+  const calc = (items, code) => {
+    const lines = [];
+    for (const i of (Array.isArray(items) ? items : []).slice(0, 50)) { const p = CFG.products[i.pid], qty = Math.max(1, Math.min(99, parseInt(i.qty, 10) || 1)); if (p) lines.push({pid:i.pid, name:p.n, price:Math.round(price(p)), qty, url:p.u}); }
+    const sub = lines.reduce((t, l) => t + l.price * l.qty, 0);
+    const pr = code && CFG.promos.find(x => String(x.code).toUpperCase() === String(code).trim().toUpperCase());
+    const ok = pr && sub >= (pr.min || 0) && !(pr.until && Date.parse(pr.until) + 864e5 < Date.now());
+    const disc = ok ? Math.round(sub * pr.pct / 100) : 0;
+    return {lines, disc, total:sub - disc};
+  };
+  const status = async id => {
+    if (mt) { const r = await fetch(`https://api.${CFG.sandbox ? 'sandbox.' : ''}midtrans.com/v2/${encodeURIComponent(id)}/status`, {headers:{Authorization:auth, Accept:'application/json'}}); const j = await r.json();
+      return {paid:['settlement', 'capture'].includes(j.transaction_status) && !['deny', 'challenge'].includes(j.fraud_status), amount:Math.round(+j.gross_amount || 0)}; }
+    const r = await fetch('https://api.xendit.co/v2/invoices?external_id=' + encodeURIComponent(id), {headers:{Authorization:auth}}); const a = await r.json(), j = Array.isArray(a) ? a[0] : null;
+    return {paid:!!j && ['PAID', 'SETTLED'].includes(j.status), amount:j ? Math.round(+j.amount || 0) : 0};
+  };
+  try {
+    let b = {}; try { b = JSON.parse(event.body || '{}'); } catch (e) {}
+    if (q.hook) {                         // notifikasi dari Midtrans/Xendit: cek ulang ke gateway, lalu catat lunas
+      const id = b.order_id || b.external_id; if (!id) return J(200, {ok:true});
+      const s = await status(id);
+      if (s.paid) await fetch(CFG.site + '/', {method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body:new URLSearchParams({'form-name':'lunas', 'no-pesanan':String(id), total:String(s.amount)}).toString()});
+      return J(200, {ok:true});
+    }
+    if (b.action === 'status') {          // pembeli kembali dari halaman bayar
+      const c = calc(b.items, b.promo), s = await status(String(b.id || ''));
+      const paid = s.paid && c.total > 0 && s.amount === c.total;
+      return J(200, {paid, links:paid ? c.lines.filter(l => /^https?:\/\//.test(l.url || '')).map(l => ({name:l.name, url:l.url})) : []});
+    }
+    if (b.action === 'create') {
+      const c = calc(b.items, b.promo), id = String(b.id || ''); if (!c.total || !/^PS-[A-Z0-9-]{3,30}$/.test(id)) return J(400, {error:'pesanan tidak valid'});
+      const back = CFG.site + '/?bayar=' + id;
+      if (mt) {
+        const items = c.lines.map(l => ({id:String(l.pid).slice(0, 50), price:l.price, quantity:l.qty, name:String(l.name).slice(0, 50)})); if (c.disc) items.push({id:'PROMO', price:-c.disc, quantity:1, name:'Promo'});
+        const r = await fetch(`https://app.${CFG.sandbox ? 'sandbox.' : ''}midtrans.com/snap/v1/transactions`, {method:'POST', headers:{Authorization:auth, 'Content-Type':'application/json', Accept:'application/json'},
+          body:JSON.stringify({transaction_details:{order_id:id, gross_amount:c.total}, item_details:items, customer_details:{first_name:String(b.name || '').slice(0, 50), email:b.email || undefined, phone:String(b.phone || '').slice(0, 19)}, callbacks:{finish:back}})});
+        const j = await r.json(); return j.redirect_url ? J(200, {url:j.redirect_url, total:c.total}) : J(502, {error:j.error_messages || 'gagal'});
+      }
+      const r = await fetch('https://api.xendit.co/v2/invoices', {method:'POST', headers:{Authorization:auth, 'Content-Type':'application/json'},
+        body:JSON.stringify({external_id:id, amount:c.total, currency:'IDR', description:'Pesanan ' + id, payer_email:b.email || undefined, success_redirect_url:back, failure_redirect_url:back})});
+      const j = await r.json(); return j.invoice_url ? J(200, {url:j.invoice_url, total:c.total}) : J(502, {error:j.message || 'gagal'});
+    }
+    return J(400, {error:'permintaan tidak dikenal'});
+  } catch (e) { return J(500, {error:'server'}); }
+}
+function payFnSource(n){
+  const P = db.pay, products = {};
+  db.products.forEach(p => { if (p.show) products[p.id] = {n:p.name, price:+p.price || 0, pp:p.promoOn ? +p.promoPrice || 0 : 0, pu:p.promoOn ? p.promoUntil : '', u:/^https?:\/\//.test(p.accessUrl || '') ? p.accessUrl : ''}; });
+  const promos = (db.promos || []).filter(x => x.active).map(x => ({code:x.code, pct:x.pct, min:x.min, until:x.until}));
+  return 'const CFG=' + JSON.stringify({provider:P.provider, key:P.key, sandbox:!!P.sandbox, site:String(n.url).replace(/\/$/, ''), products, promos}) + ';\nexports.handler=' + payHandler.toString() + ';\n';
+}
+const crcTable = (() => { const t = []; for (let n = 0; n < 256; n++) { let c = n; for (let k = 0; k < 8; k++) c = c & 1 ? 0xEDB88320 ^ (c >>> 1) : c >>> 1; t[n] = c >>> 0; } return t; })();
+function zipOne(name, data){               // zip satu file tanpa kompresi
+  let c = 0xFFFFFFFF; for (const b of data) c = crcTable[(c ^ b) & 255] ^ (c >>> 8); c = (c ^ 0xFFFFFFFF) >>> 0;
+  const nm = new TextEncoder().encode(name), L = data.length, out = new Uint8Array(30 + nm.length + L + 46 + nm.length + 22), v = new DataView(out.buffer); let o = 0;
+  const w32 = x => { v.setUint32(o, x, true); o += 4; }, w16 = x => { v.setUint16(o, x, true); o += 2; };
+  w32(0x04034b50); w16(20); w16(0); w16(0); w16(0); w16(0x21); w32(c); w32(L); w32(L); w16(nm.length); w16(0); out.set(nm, o); o += nm.length; out.set(data, o); o += L;
+  const cd = o; w32(0x02014b50); w16(20); w16(20); w16(0); w16(0); w16(0); w16(0x21); w32(c); w32(L); w32(L); w16(nm.length); w16(0); w16(0); w16(0); w16(0); w32(0); w32(0); out.set(nm, o); o += nm.length;
+  const sz = o - cd; w32(0x06054b50); w16(0); w16(0); w16(1); w16(1); w32(sz); w32(cd); w16(0);
+  return out;
+}
+function payField(k, v){
+  if (k === 'on' && v && !db.pay.key) { toast('Isi dulu kunci API dari Midtrans atau Xendit.'); renderAdmin(); return; }
+  db.pay[k] = v; db.share.netlify.dirty = true; save(); renderAdmin();
+  if (k === 'on') toast(v ? 'Aktif. Tekan Perbarui toko supaya pembayaran jalan di link pembeli.' : 'Dimatikan. Tekan Perbarui toko untuk menerapkan.');
+}
+function payPanel(){
+  const P = db.pay, hook = (NF().url || '') + '/.netlify/functions/pay?hook=1', m = P.provider === 'midtrans';
+  return `<div class="panel"><div class="panel-head"><div><h2>Pembayaran otomatis</h2><p>Pembeli bayar langsung di halaman pembayaran (QRIS, e-wallet, transfer), tanpa chat WhatsApp. Setelah lunas, link produk muncul otomatis dan pesanan ditandai Selesai.</p></div></div>
+    <div class="grid-2">
+      <label class="field"><span>Layanan pembayaran</span><select onchange="payField('provider',this.value)"><option value="midtrans" ${m ? 'selected' : ''}>Midtrans</option><option value="xendit" ${m ? '' : 'selected'}>Xendit</option></select></label>
+      <label class="field"><span>${m ? 'Server Key' : 'Secret API Key'}</span><input type="password" autocomplete="off" value="${esc(P.key)}" onchange="payField('key',this.value.trim())" placeholder="${m ? 'Mid-server-…' : 'xnd_…'}"><small>Tersimpan di browser ini dan di fungsi server Netlify. Tidak ikut ke halaman pembeli.</small></label>
+    </div>
+    ${m ? `<div class="switch-row"><div><b>Mode uji coba (sandbox)</b><small>Matikan kalau sudah memakai Server Key produksi.</small></div><label class="switch"><input type="checkbox" ${P.sandbox ? 'checked' : ''} onchange="payField('sandbox',this.checked)"><span class="track"></span></label></div>` : ''}
+    <div class="switch-row"><div><b>Aktifkan pembayaran otomatis</b><small>Kalau mati, pesanan tetap masuk seperti biasa.</small></div><label class="switch"><input type="checkbox" ${P.on ? 'checked' : ''} onchange="payField('on',this.checked)"><span class="track"></span></label></div>
+    <p class="hint">Langkah terakhir: tempel alamat ini di ${m ? 'Midtrans → Settings → Configuration → <b>Payment Notification URL</b>' : 'Xendit → Settings → Webhooks → <b>Invoices paid</b>'}, lalu tekan <b>Perbarui toko</b> di bawah.</p>
+    <div class="hero-actions"><button class="btn btn-ghost" onclick="copyText('${esc(hook)}')">${ic('link')} Salin alamat notifikasi</button></div></div>`;
 }
 
 /* ---------- Terbitkan ke Netlify (link otomatis) ---------- */
@@ -3310,12 +3353,15 @@ async function nfPublish(){
       const live = info.custom_domain ? 'https://' + info.custom_domain : (info.ssl_url || info.url || n.url);
       if (live && (live !== n.url || (info.custom_domain || '') !== (n.domain || ''))) { nfSaving = true; Object.assign(n, {url:live, name:info.name || n.name, domain:info.custom_domain || ''}); db.share.url = live; save(); nfSaving = false; }
     } catch (e) { if (e.status === 404) { nfSaving = true; Object.assign(n, {siteId:'', url:'', name:''}); save(); nfSaving = false; e.gone = true; throw e; } if (e.status === 401) throw e; }
-    try { dep = await nfReq(`/sites/${n.siteId}/deploys`, {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({files:{'/index.html':sha}})}); }
+    let fnBytes = null, fnSha = '';
+    if (db.pay.on && db.pay.key) { fnBytes = zipOne('pay.js', new TextEncoder().encode(payFnSource(n))); fnSha = await sha1Hex(fnBytes); }
+    try { dep = await nfReq(`/sites/${n.siteId}/deploys`, {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({files:{'/index.html':sha}, ...(fnSha ? {functions:{pay:fnSha}} : {})})}); }
     catch (e) { if (e.status === 404) { nfSaving = true; Object.assign(n, {siteId:'', url:'', name:''}); save(); nfSaving = false; e.gone = true; } throw e; }
     if ((dep.required || []).includes(sha)) {
       nfStatus(`Mengunggah toko (${Math.max(1, Math.round(bytes.length / 1024)).toLocaleString('id-ID')} KB)…`);
       await nfReq(`/deploys/${dep.id}/files/index.html`, {method:'PUT', headers:{'Content-Type':'application/octet-stream'}, body:bytes});
     }
+    if (fnSha && (dep.required_functions || []).includes(fnSha)) { nfStatus('Mengunggah fungsi pembayaran…'); await nfReq(`/deploys/${dep.id}/functions/pay?runtime=js`, {method:'PUT', headers:{'Content-Type':'application/octet-stream'}, body:fnBytes}); }
     nfStatus('Menunggu Netlify menyelesaikan…');
     for (let i = 0; i < 40; i++) {
       const d = await nfReq(`/deploys/${dep.id}`);
@@ -3503,6 +3549,7 @@ function pageShare(){
   M(`${head('Link pembeli', 'Pembeli mendapat versi toko tanpa tombol Admin. Mereka bisa melihat produk dan memesan lewat WhatsApp, tapi tidak bisa mengubah apa pun.')}
     <div class="notice">${ic('shield')}<span>File yang sedang kamu buka ini adalah tempat mengelola toko. Jangan bagikan file ini ke pembeli. Bagikan link toko yang dibuat di halaman ini.</span></div>
 
+    ${db.share.provider === 'netlify' && n.token ? payPanel() : ''}
     ${!db.share[db.share.provider].token ? keyPanel() : db.share.provider !== 'netlify' ? altPanel() : `<div class="panel nf-panel">
       <div class="panel-head"><div><h2>Link toko</h2><p>Tanpa unduh dan unggah file. Sekali tekan, toko langsung terbit jadi link, bisa memakai alamat gratis <b>.netlify.app</b> atau <b>domain sendiri</b> seperti kizuyastore.com. Setiap ada perubahan, tekan <b>Perbarui toko</b>, link-nya tetap sama.</p></div></div>
       ${!n.token ? `
